@@ -8,3 +8,9 @@ body {
  .collapse navbar-collapse{
      font: white;
  }
+
+ .top-bar{
+
+    background: linear-gradient(45deg, rgba(2,0,36,1) 25%, rgba(64,9,121,1) 63%, rgba(0,212,255,1) 93%);
+    font-weight: 300;
+ }
