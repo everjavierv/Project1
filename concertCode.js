@@ -42,12 +42,44 @@ function addConcertInfo() {
 
   var queryURL = queryBaseURL + zipCode + "&apikey=" + apiKey;
 
+  // $.ajax({
+  //   url: queryURL,
+  //   method: "GET",
+  // }).then(function (response) {
+  //   var cName = response._embedded.events;
+  //   console.log("response :" + response);
+  //   console.log("concert name: " + response);
+  // });
+
   $.ajax({
+    type: "GET",
     url: queryURL,
-    method: "GET",
-  }).then(function (response) {
-    var cName = response._embedded.events;
-    console.log("concert name: " + response);
+    async: true,
+    dataType: "json",
+    success: function (response) {
+      //console.log(response._embedded.events);
+
+      //name, date, venue, url, genre, music sample
+      var cName = response._embedded.events[0].name;
+      var cDate = response._embedded.events[0].dates.start.localDate;
+      var cVenue = response._embedded.events[0]._embedded.venues[0].name;
+      var cURL = response._embedded.events[0].url;
+      var cGenre = response._embedded.events[0].classifications[0].genre.name;
+      var cPic = response._embedded.events[0].images[2].url;
+
+      $(".concert-img").attr("src", cPic);
+      $(".concert-name").append(" " + cName);
+      $(".concert-date").append(" " + cDate);
+      $(".concert-venue").append(" " + cVenue);
+      $(".concert-url").append(" " + cURL);
+      $(".concert-genre").append(" " + cGenre);
+
+      // Parse the response.
+      // Do other things.
+    },
+    error: function (xhr, status, err) {
+      // This time, we do not end up here!
+    },
   });
 }
 
