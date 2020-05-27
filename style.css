@@ -1,5 +1,7 @@
 body {
     background: linear-gradient(45deg, rgba(2,0,36,1) 25%, rgba(64,9,121,1) 63%, rgba(0,212,255,1) 93%);
+    
+    
  }
  #header {
     background: linear-gradient(45deg, rgba(2,0,36,1) 25%, rgba(121,9,38,0.21048062865497075) 63%, rgba(0,212,255,1) 93%);
@@ -13,4 +15,28 @@ body {
 
     background: linear-gradient(45deg, rgba(2,0,36,1) 25%, rgba(64,9,121,1) 63%, rgba(0,212,255,1) 93%);
     font-weight: 300;
+ }
+
+ .card{
+    background: linear-gradient(45deg, rgba(2,0,36,1) 25%, rgba(64,9,121,1) 63%, rgba(0,212,255,1) 93%);
+    font-weight: 300;
+    font-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    position: center;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin:0;
+    display: flex;
+    background-attachment: fixed;
+    background: linear-gradient(45deg, rgba(2,0,36,1) 25%, rgba(121,9,38,0.21048062865497075) 63%, rgba(0,212,255,1) 93%);
+    
+ }
+
+ .card-divider{
+
+    align-conten: center;
  }

@@ -12,6 +12,8 @@
   -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
   <!-- Style to fix the issue of text extending past card length -->
   <style>
     .card-body a {
@@ -30,25 +32,16 @@
   <div class="container" > 
 
     <!-- Jumbotron for Title -->
-    <div class="callout" id="header"  style="color: white;" ></div>
-      <h1 class="text-center">
-        <strong>
-          <i class="fi-crown"></i> <span>Concert Search</strong></span>
-      </h1>
-    </div>
-    <div class="top-bar-right" id="navbar">
-      <ul class="dropdown menu" data-dropdown-menu>>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="searchartist.html">Search Artist</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Whatisconcertsearch.html">About us</a>
-        </li>
-      </ul>
-    </div>
+   <div class="card" style="width: 200px;">
+  <div class="card-divider">
+    Concert Search
+  </div>
+  <img src="assets/download.jfif">
+  <div class="card-section">
+   <!-- <h4>Concert Search</h4>
+    <p>It has an easy to override visual style, and is appropriately subdued.</p>
+  </div>-->
+</div>
   </nav>
 
 
@@ -86,7 +79,7 @@
 
               <!-- Here we have our final submit button -->
               <div class="button-group">
-                <a class="button"><i class ="fi-ticket icon left"></i>Search by Artist</a>
+                <a class="button"><i class ="fi-ticket"></i>Search by Artist</a>
                 <a class="button">Search by City</a>              
               </div>
              
