@@ -27,6 +27,11 @@ var apiKey = "kXRwRNyapQ2ygIBMLGoyhnqOD27mZOk7";
 var queryBaseURL =
   "https://app.ticketmaster.com/discovery/v2/events.json?postalCode=";
 
+var lastFMBaseURL =
+  "http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=";
+
+var lastFMapiKey = "&api_key=eb88403b0132e57c63d39d0a9c5f028f&format=json";
+
 $("#run-search").on("click", function (event) {
   event.preventDefault();
 
@@ -38,6 +43,14 @@ $("#run-search").on("click", function (event) {
 });
 
 function addConcertInfo() {
+  $(".concert-img").empty();
+  $(".concert-name").empty();
+  $(".concert-date").empty();
+  $(".concert-venue").empty();
+  $(".concert-url").empty();
+  $(".concert-url").empty();
+  $(".concert-top-song").empty();
+
   var zipCode = $("#search-term").val();
 
   var queryURL = queryBaseURL + zipCode + "&apikey=" + apiKey;
@@ -76,6 +89,25 @@ function addConcertInfo() {
 
       $(".concert-genre").append("Genre: " + cGenre);
 
+      var lastFMURL = lastFMBaseURL + cName + lastFMapiKey;
+
+      //start of second api call
+      $.ajax({
+        type: "GET",
+        url: lastFMURL,
+        async: true,
+        dataType: "json",
+        success: function (response) {
+          console.log("last fm: " + response);
+          console.log("last fm song: " + response.toptracks.track[0].name);
+          var cTopSong = response.toptracks.track[0].name;
+
+          $(".concert-top-song").append("Top Song: " + cTopSong);
+
+          //var cTopSong = response;
+        },
+      });
+
       // Parse the response.
       // Do other things.
     },
@@ -83,18 +115,6 @@ function addConcertInfo() {
       // This time, we do not end up here!
     },
   });
-
-  // var lastFMURL =
-  //   "http://www.last.fm/api/auth/?api_key=eb88403b0132e57c63d39d0a9c5f028f";
-
-  // //start of second api call
-  // $.ajax({
-  //   type: "GET",
-  //   url: lastFMURL,
-  //   async: true,
-  //   dataType: "json",
-  //   success: function (response) {},
-  // });
 }
 
 // function buildQueryURL() {
