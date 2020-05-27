@@ -68,11 +68,13 @@ function addConcertInfo() {
       var cPic = response._embedded.events[0].images[2].url;
 
       $(".concert-img").attr("src", cPic);
-      $(".concert-name").append(" " + cName);
-      $(".concert-date").append(" " + cDate);
-      $(".concert-venue").append(" " + cVenue);
-      $(".concert-url").append(" " + cURL);
-      $(".concert-genre").append(" " + cGenre);
+      $(".concert-name").append("Artist: " + cName);
+      $(".concert-date").append("Date: " + cDate);
+      $(".concert-venue").append("Venue: " + cVenue);
+      $(".concert-url").attr("href", cURL);
+      $(".concert-url").append("URL: " + cURL);
+
+      $(".concert-genre").append("Genre: " + cGenre);
 
       // Parse the response.
       // Do other things.
@@ -81,6 +83,18 @@ function addConcertInfo() {
       // This time, we do not end up here!
     },
   });
+
+  // var lastFMURL =
+  //   "http://www.last.fm/api/auth/?api_key=eb88403b0132e57c63d39d0a9c5f028f";
+
+  // //start of second api call
+  // $.ajax({
+  //   type: "GET",
+  //   url: lastFMURL,
+  //   async: true,
+  //   dataType: "json",
+  //   success: function (response) {},
+  // });
 }
 
 // function buildQueryURL() {
