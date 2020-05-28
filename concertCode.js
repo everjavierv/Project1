@@ -43,13 +43,7 @@ $("#run-search").on("click", function (event) {
 });
 
 function addConcertInfo() {
-  $(".concert-img").empty();
-  $(".concert-name").empty();
-  $(".concert-date").empty();
-  $(".concert-venue").empty();
-  $(".concert-url").empty();
-  $(".concert-url").empty();
-  $(".concert-top-song").empty();
+  $("#concert-section").empty();
 
   var zipCode = $("#search-term").val();
 
@@ -73,21 +67,51 @@ function addConcertInfo() {
       //console.log(response._embedded.events);
 
       //name, date, venue, url, genre, music sample
-      var cName = response._embedded.events[0].name;
-      var cDate = response._embedded.events[0].dates.start.localDate;
-      var cVenue = response._embedded.events[0]._embedded.venues[0].name;
-      var cURL = response._embedded.events[0].url;
-      var cGenre = response._embedded.events[0].classifications[0].genre.name;
-      var cPic = response._embedded.events[0].images[2].url;
+      var list = response._embedded || "No event";
 
-      $(".concert-img").attr("src", cPic);
-      $(".concert-name").append("Artist: " + cName);
-      $(".concert-date").append("Date: " + cDate);
-      $(".concert-venue").append("Venue: " + cVenue);
-      $(".concert-url").attr("href", cURL);
-      $(".concert-url").append("URL: " + cURL);
+      var eventCount = list.events.length;
+      console.log("Event count: " + eventCount);
 
-      $(".concert-genre").append("Genre: " + cGenre);
+      for (var i = 0; i <= eventCount; i++) {
+        var $concertList = $("<ul>");
+        $concertList.addClass("concert-group");
+
+        $("#concert-section").append($concertList);
+
+        var $concertListItem = $("<li class='list-group-item'>");
+
+        console.log("i: " + i);
+        console.log(
+          "response._embedded.events[i]: " + response._embedded.events[i]
+        );
+        var cName = response._embedded.events[i].name;
+        var cDate = response._embedded.events[i].dates.start.localDate;
+        var cVenue = response._embedded.events[i]._embedded.venues[0].name;
+        var cURL = response._embedded.events[i].url;
+        var cGenre = response._embedded.events[i].classifications[0].genre.name;
+        var cPic = response._embedded.events[i].images[2].url;
+
+        $concertListItem.append(
+          "<img class='imgClass' src='" + cPic + "'>" + "</img>"
+        );
+        $concertListItem.append("<h4>Artist: " + cName + "</h4>");
+        $concertListItem.append("<h4>Date: " + cDate + "</h4>");
+        $concertListItem.append("<h4>Venue: " + cVenue + "</h4>");
+        $concertListItem.append("<a href='" + cURL + "'>" + cURL + "</a>");
+        $concertListItem.append("<h4>Genre: " + cGenre + "</h4>");
+
+        $concertList.append($concertListItem);
+
+        // $(".concert-img").attr("src", cPic);
+        // $(".concert-name").append("Artist: " + cName);
+        // $(".concert-date").append("Date: " + cDate);
+        // $(".concert-venue").append("Venue: " + cVenue);
+        // $(".concert-url").attr("href", cURL);
+        // $(".concert-url").append("URL: " + cURL);
+        // $(".concert-genre").append("Genre: " + cGenre);
+
+        // $("#concert-section").append($(".concert-c"));
+      } //end of for loop
 
       var lastFMURL = lastFMBaseURL + cName + lastFMapiKey;
 

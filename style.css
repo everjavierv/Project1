@@ -18,3 +18,11 @@ body {
 .concert-c {
   font-weight: bolder;
 }
+
+.concert-img {
+  max-width: 305px;
+}
+
+.imgClass {
+  max-width: 305px;
+}
