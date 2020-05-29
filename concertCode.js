@@ -43,7 +43,7 @@ $("#run-search").on("click", function (event) {
 });
 
 function addConcertInfo() {
-  $("#concert-section").empty();
+  $("#concert-").empty();
 
   var zipCode = $("#search-term").val();
 
@@ -92,13 +92,23 @@ function addConcertInfo() {
         var cPic = response._embedded.events[i].images[2].url;
 
         $concertListItem.append(
-          "<img class='imgClass' src='" + cPic + "'>" + "</img>"
+          "<img class='imgClass' src='" + cPic + "'>" + "</img></br>"
         );
-        $concertListItem.append("<h4>Artist: " + cName + "</h4>");
-        $concertListItem.append("<h4>Date: " + cDate + "</h4>");
-        $concertListItem.append("<h4>Venue: " + cVenue + "</h4>");
-        $concertListItem.append("<a href='" + cURL + "'>" + cURL + "</a>");
-        $concertListItem.append("<h4>Genre: " + cGenre + "</h4>");
+        $concertListItem.append(
+          "<h4><i class='fa fa-music'></i> Artist: " + cName + "</h4>"
+        );
+        $concertListItem.append(
+          "<h4><i class='fa fa-calendar'></i> Date: " + cDate + "</h4>"
+        );
+        $concertListItem.append(
+          "<h4><i class='fa fa-city'></i> Venue: " + cVenue + "</h4>"
+        );
+        $concertListItem.append(
+          "<a href='" + cURL + "'><i class='fa fa-link'></i> " + cURL + "</a>"
+        );
+        $concertListItem.append(
+          "<h4><i class='fa fa-compact-disc'></i> Genre: " + cGenre + "</h4>"
+        );
 
         $concertList.append($concertListItem);
 

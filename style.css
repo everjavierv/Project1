@@ -26,3 +26,7 @@ body {
 .imgClass {
   max-width: 305px;
 }
+
+.i.fa.fa-music {
+  display: inline-block;
+}
