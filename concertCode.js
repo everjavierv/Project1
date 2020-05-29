@@ -71,19 +71,25 @@ function addConcertInfo() {
 
       var eventCount = list.events.length;
       console.log("Event count: " + eventCount);
+      console.log("response: " + response);
 
       for (var i = 0; i <= eventCount; i++) {
         var $concertList = $("<ul>");
         $concertList.addClass("concert-group");
 
-        $("#concert-section").append($concertList);
+        var $concertImg = $("<ul>"); //new
+
+        $(".conImg").append($concertImg); //new
+        $(".conInfo").append($concertList);
 
         var $concertListItem = $("<li class='list-group-item'>");
+        var $concertImgItem = $("<li class='list-group-item'>");
 
         console.log("i: " + i);
         console.log(
           "response._embedded.events[i]: " + response._embedded.events[i]
         );
+
         var cName = response._embedded.events[i].name;
         var cDate = response._embedded.events[i].dates.start.localDate;
         var cVenue = response._embedded.events[i]._embedded.venues[0].name;
@@ -91,25 +97,38 @@ function addConcertInfo() {
         var cGenre = response._embedded.events[i].classifications[0].genre.name;
         var cPic = response._embedded.events[i].images[2].url;
 
-        $concertListItem.append(
+        $concertImgItem.append(
           "<img class='imgClass' src='" + cPic + "'>" + "</img></br>"
         );
         $concertListItem.append(
-          "<h4><i class='fa fa-music'></i> Artist: " + cName + "</h4>"
+          "<h4 class ='cInfo' ><i class='fa fa-music'></i> Artist: " +
+            cName +
+            "</h4>"
         );
         $concertListItem.append(
-          "<h4><i class='fa fa-calendar'></i> Date: " + cDate + "</h4>"
+          "<h4 class ='cInfo' ><i class='fa fa-calendar'></i> Date: " +
+            cDate +
+            "</h4>"
         );
         $concertListItem.append(
-          "<h4><i class='fa fa-city'></i> Venue: " + cVenue + "</h4>"
+          "<h4 class ='cInfo' ><i class='fa fa-city'></i> Venue: " +
+            cVenue +
+            "</h4>"
         );
         $concertListItem.append(
-          "<a href='" + cURL + "'><i class='fa fa-link'></i> " + cURL + "</a>"
+          "<a class ='cInfo' href='" +
+            cURL +
+            "'><i class='fa fa-link'></i> URL: " +
+            cURL +
+            "</a>"
         );
         $concertListItem.append(
-          "<h4><i class='fa fa-compact-disc'></i> Genre: " + cGenre + "</h4>"
+          "<h4 class ='cInfo' ><i class='fa fa-compact-disc'></i> Genre: " +
+            cGenre +
+            "</h4>"
         );
 
+        $concertImg.append($concertImgItem);
         $concertList.append($concertListItem);
 
         // $(".concert-img").attr("src", cPic);

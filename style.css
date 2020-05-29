@@ -19,14 +19,24 @@ body {
   font-weight: bolder;
 }
 
-.concert-img {
-  max-width: 305px;
+.concImg {
+  align-content: space-between;
+}
+
+.list-group-item {
+  min-height: 194px;
+  align-items: center;
+}
+
+.img {
+  align-items: center;
 }
 
 .imgClass {
-  max-width: 305px;
+  width: 100%;
+  object-fit: fill;
 }
 
-.i.fa.fa-music {
-  display: inline-block;
+.cInfo {
+  align-self: flex-end;
 }
