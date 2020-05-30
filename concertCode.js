@@ -1,27 +1,3 @@
-// $.ajax({
-//   type: "GET",
-//   url:
-//     "https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=324&apikey=kXRwRNyapQ2ygIBMLGoyhnqOD27mZOk7",
-//   async: true,
-//   dataType: "json",
-//   success: function (json) {
-//     console.log(json);
-//     // Parse the response.
-//     // Do other things.
-//   },
-//   error: function (xhr, status, err) {
-//     // This time, we do not end up here!
-//   },
-// });
-
-//https://app.ticketmaster.com/discovery/v2/events.json?postalCode=77057&apikey=kXRwRNyapQ2ygIBMLGoyhnqOD27mZOk7
-
-// var queryURL =
-//   "https://app.ticketmaster.com/discovery/v2/events.json?postalCode=" +
-//   zipCode +
-//   "&apikey=" +
-//   apiKey;
-
 var apiKey = "kXRwRNyapQ2ygIBMLGoyhnqOD27mZOk7";
 
 var queryBaseURL =
@@ -43,20 +19,12 @@ $("#run-search").on("click", function (event) {
 });
 
 function addConcertInfo() {
-  $("#concert-").empty();
+  $(".conInfo").empty();
+  $(".conImg").empty();
 
   var zipCode = $("#search-term").val();
 
   var queryURL = queryBaseURL + zipCode + "&apikey=" + apiKey;
-
-  // $.ajax({
-  //   url: queryURL,
-  //   method: "GET",
-  // }).then(function (response) {
-  //   var cName = response._embedded.events;
-  //   console.log("response :" + response);
-  //   console.log("concert name: " + response);
-  // });
 
   $.ajax({
     type: "GET",
@@ -69,28 +37,30 @@ function addConcertInfo() {
       //name, date, venue, url, genre, music sample
       var list = response._embedded || "No event";
 
-      var eventCount = list.events.length;
-      console.log("Event count: " + eventCount);
-      console.log("response: " + response);
+      const eventCount = list.events.length;
+      //console.log("Event count: " + eventCount);
+      //console.log("response: " + response);
 
-      for (var i = 0; i <= eventCount; i++) {
+      for (var i = 0; i < eventCount; i++) {
         var $concertList = $("<ul>");
         $concertList.addClass("concert-group");
 
-        var $concertImg = $("<ul>"); //new
+        $concertImg = $("<ul>"); //new
 
         $(".conImg").append($concertImg); //new
         $(".conInfo").append($concertList);
 
-        var $concertListItem = $("<li class='list-group-item'>");
-        var $concertImgItem = $("<li class='list-group-item'>");
+        var $concertListItem = $("<li class='list-group-item cListIt'>");
+        var $concertImgItem = $("<li class='list-group-item cImgIt'>");
 
-        console.log("i: " + i);
-        console.log(
-          "response._embedded.events[i]: " + response._embedded.events[i]
-        );
+        //console.log("i: " + i);
+        // console.log(
+        //   "response._embedded.events[i]: " + response._embedded.events[i]
+        // );
 
         var cName = response._embedded.events[i].name;
+        // const concertNames = [];
+        // concertNames.push(cName);
         var cDate = response._embedded.events[i].dates.start.localDate;
         var cVenue = response._embedded.events[i]._embedded.venues[0].name;
         var cURL = response._embedded.events[i].url;
@@ -100,10 +70,10 @@ function addConcertInfo() {
         $concertImgItem.append(
           "<img class='imgClass' src='" + cPic + "'>" + "</img></br>"
         );
-        $concertListItem.append(
-          "<h4 class ='cInfo' ><i class='fa fa-music'></i> Artist: " +
+        $concertImgItem.append(
+          "<h5 class ='cInfo' ><i class='fa fa-music'></i> Artist: " +
             cName +
-            "</h4>"
+            "</h5>"
         );
         $concertListItem.append(
           "<h4 class ='cInfo' ><i class='fa fa-calendar'></i> Date: " +
@@ -131,54 +101,30 @@ function addConcertInfo() {
         $concertImg.append($concertImgItem);
         $concertList.append($concertListItem);
 
-        // $(".concert-img").attr("src", cPic);
-        // $(".concert-name").append("Artist: " + cName);
-        // $(".concert-date").append("Date: " + cDate);
-        // $(".concert-venue").append("Venue: " + cVenue);
-        // $(".concert-url").attr("href", cURL);
-        // $(".concert-url").append("URL: " + cURL);
-        // $(".concert-genre").append("Genre: " + cGenre);
+        var lastFMURL = lastFMBaseURL + cName.trim() + lastFMapiKey;
 
-        // $("#concert-section").append($(".concert-c"));
+        // $.ajax({
+        //   type: "GET",
+        //   url: lastFMURL,
+        //   async: true,
+        //   dataType: "json",
+        // }).then(function (response) {
+        //console.log("last fm: " + response);
+        //console.log("last fm song: " + response.toptracks.track[0].name);
+
+        // $(".conInfo").append($concertList);
+
+        // var cSong = response.toptracks.track[0].name;
+
+        // $(".cListIt").append(
+        //   "<h4 class ='cSong' ><i class='fa fa-microphone'></i> Top Song: " +
+        //     cSong +
+        //     "</h4>"
+        // );
+
+        //$concertList.append($concertListItem);
+        //});
       } //end of for loop
-
-      var lastFMURL = lastFMBaseURL + cName + lastFMapiKey;
-
-      //start of second api call
-      $.ajax({
-        type: "GET",
-        url: lastFMURL,
-        async: true,
-        dataType: "json",
-        success: function (response) {
-          console.log("last fm: " + response);
-          console.log("last fm song: " + response.toptracks.track[0].name);
-          var cTopSong = response.toptracks.track[0].name;
-
-          $(".concert-top-song").append("Top Song: " + cTopSong);
-
-          //var cTopSong = response;
-        },
-      });
-
-      // Parse the response.
-      // Do other things.
-    },
-    error: function (xhr, status, err) {
-      // This time, we do not end up here!
     },
   });
 }
-
-// function buildQueryURL() {
-//   var zipCode = $("#search-term").val();
-//   var apiKey = "kXRwRNyapQ2ygIBMLGoyhnqOD27mZOk7";
-
-//   var queryURL =
-//     "https://app.ticketmaster.com/discovery/v2/events.json?postalCode=" +
-//     zipCode +
-//     "&apikey=" +
-//     apiKey;
-
-//   console.log(zipCode);
-// }
