@@ -1,7 +1,6 @@
 body {
     background: linear-gradient(45deg, rgba(2,0,36,1) 25%, rgba(64,9,121,1) 63%, rgba(0,212,255,1) 93%);
-    
-    
+        
  }
  #header {
     background: linear-gradient(45deg, rgba(2,0,36,1) 25%, rgba(121,9,38,0.21048062865497075) 63%, rgba(0,212,255,1) 93%);
@@ -15,6 +14,7 @@ body {
 
     background: linear-gradient(45deg, rgba(2,0,36,1) 25%, rgba(64,9,121,1) 63%, rgba(0,212,255,1) 93%);
     font-weight: 300;
+    display: inline-block;
  }
 
  .callout-container{
@@ -27,7 +27,7 @@ body {
     font-color: rgb(126, 23, 23);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;  
-    border-radius: 40px;
+    border-radius: 10px;
     position: center;
     display: inline-block;   
     align-items: center;
@@ -35,8 +35,29 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif    
     background-attachment: fixed;
     background: linear-gradient(45deg, rgba(2,0,36,1) 25%, rgba(121,9,38,0.21048062865497075) 63%, rgba(0,212,255,1) 93%);
+    font-family: 
+    
+ }
+ 
+ .card{
+
+    display: inline-block;
+ }
+ 
+ 
+
+ .container{
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(64,9,121,1)
+    border-radius: 20px;    
+    background: linear-gradient(45deg, rgba(2,0,36,1) 25%, rgba(64,9,121,1) 63%, rgba(0,212,255,1) 93%);
+    font-weight: 300;
     
  }
 
- .container{
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
   

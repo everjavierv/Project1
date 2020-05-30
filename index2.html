@@ -39,7 +39,7 @@
     <!-- Main Bootstrap Search -->
     <div class="container">
       <!-- Jumbotron for Title -->
-      <div class="jumbotron" id="header" style="color: white;">
+      <div class="top-bar" id="header" style="color: white; width: 900px; height: 80px;">
         <h1 class="text-center">
           <strong> <i class="fas fa-play"></i> Last Call</strong>
         </h1>
@@ -53,7 +53,7 @@
           <div class="card" style="width: 900px;">
             <div class="card-divider">
               <strong>
-                <i class="fas fa-calendar-alt"></i> Say where you want to go</strong
+                <i class="fas fa-calendar-alt"></i> One search away from a concert near you</strong
               >
             </div>
             <div class="card-section">
@@ -67,7 +67,7 @@
                 
 
                 <!-- Here we have our final submit button -->
-                <button type="submit" class="button small medium-only-expanded" id="run-search">
+                <button type="submit" class="button large medium-only-expanded" id="run-search">
                   <i class="fa fa-search"></i> Search
                 </button>
               </form>
@@ -83,16 +83,16 @@
 
           <!-- This card will initially be made up of a card and wells for each of the Concert
              retrieved -->
-          <div class="card">
+          <div class="card" style="width: 900px;">
             <!-- card Heading for the retrieved Concert
                box -->
-            <div class="card-header">
-              <strong> <i class="fa fa-table"></i> Search Results</strong>
+            <div class="card-divider">
+              <strong> <i class="fas fa-scroll"></i> Search Results</strong>
             </div>
 
             <!-- This main card will hold each of the resulting Concert
              -->
-            <div class="card-body" id="concert-section">
+            <div class="card-section" id="concert-section">
               <div class="container">
                 <div class="col-md-12 concert-c"></div>
                 <div class="row">
