@@ -26,7 +26,8 @@ body {
 }
 
 .list-group-item {
-  min-height: 229px;
+  min-height: 270px;
+  max-height: 271px;
   align-items: center;
 }
 
