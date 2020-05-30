@@ -46,7 +46,7 @@
 
   <body>
     <!-- Main Bootstrap Search -->
-    <div class="container">
+    <div class="grid-container">
       <!-- Jumbotron for Title -->
       <div class="top-bar" id="header" style="color: white; width: 900px;">
         <h1 class="text-center">
@@ -106,7 +106,7 @@
 
           <!-- This card will initially be made up of a card and wells for each of the Concert
              retrieved -->
-          <div class="card" style="width: 900px;">
+          <div class="card" style="width:900px;">
             <!-- card Heading for the retrieved Concert
                box -->
             <div class="card-divider">
@@ -115,13 +115,17 @@
 
             <!-- This main card will hold each of the resulting Concert
              -->
-            <div class="card-section" id="concert-section">
-              <div class="container">
-                <div class="concert-c"></div>
-                <div class="grid-y">
-                  <div class="cell-medium-4 conImg"></div>
+           <!-- <div class="card-section" style="width: max-content" id="concert-section">-->
+              <div class="grid-container full">
+               <!-- <div class="cell-md-12 concert-c"></div>-->
+                <div class="grid-x grid-margin-x">
+                  <div class="card">
+                  <div class="cell conImg"></div>
+                  <div class="card-divider">
 
-                  <div class="cell-medium-8 conInfo"></div>
+                  <div class="cell conInfo"></div>
+                  </div>
+                </div>
                   <p></p>
                   <!--end of row-->
                 </div>
