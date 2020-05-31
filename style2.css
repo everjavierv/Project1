@@ -20,9 +20,19 @@ body {
   }
   
   .conImg {
+    margin-left: auto;
+    margin-right: auto;  
+    font-weight: 600;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1em;
+    color: #404040;
   }
   
   .conInfo {
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .list-group-item {
@@ -43,5 +53,27 @@ body {
   }
 
   .card{
-      float: left;
+    display: inline-block; 
+    float: left;
+  }
+
+  .button {
+    border-radius: 0 5000px 5000px 0;
+    font-size: 0.8rem;
+  }
+
+  .grid-container{
+    text-align: center;
+  }
+
+  .top-bar{
+    display: inline-block; 
+  }
+
+  .grid-x{
+    display: inline-block;
+  }
+
+  .grid-y{
+    display: inline-block;
   }
