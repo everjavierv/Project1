@@ -1,43 +1,93 @@
 body {
-  background: linear-gradient(
-    45deg,
-    rgba(2, 0, 36, 1) 25%,
-    rgba(64, 9, 121, 1) 63%,
-    rgba(0, 212, 255, 1) 93%
-  );
-}
-#header {
-  background: linear-gradient(
-    45deg,
-    rgba(2, 0, 36, 1) 25%,
-    rgba(121, 9, 38, 0.21048062865497075) 63%,
-    rgba(0, 212, 255, 1) 93%
-  );
-}
+ font-family: Arial, Helvetica, sans-serif
+    font-weight: 500;
+    background: linear-gradient(
+      45deg,
+      rgba(2, 0, 36, 1) 25%,
+      rgba(64, 9, 121, 1) 63%,
+      rgba(0, 212, 255, 1) 93%
+    );
+  }
+  #header {
+    background: linear-gradient(
+      45deg,
+      rgba(2, 0, 36, 1) 25%,
+      rgba(121, 9, 38, 0.21048062865497075) 63%,
+      rgba(0, 212, 255, 1) 93%
+    );
+  }
+  
+  .concert-c {
+    font-weight: bolder;
+  }
+  
+  .conImg {
+    margin-left: auto;
+    margin-right: auto;  
+    font-weight: 600;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1em;
+    color: #404040;
+  }
+  
+  .conInfo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .list-group-item {
+    min-height: 270px;
+    max-height: 271px;
+    align-items: center;
+  }
+  
+  .img {
+    align-items: center;
+  }
+  
+  .imgClass {
+    width: 100%;
+  }
+  
+  .cInfo {
+  }
 
-.concert-c {
-  font-weight: bolder;
-}
+  .card{
+    display: inline-block; 
+    float: left;
+    border-radius: 50px;
+    
+  }
 
-.conImg {
-}
+  .button {
+    border-radius: 0 5000px 5000px 0;
+    font-size: 0.8rem;
+  }
 
-.conInfo {
-}
+  .grid-container{
+    text-align: center;
+  }
 
-.list-group-item {
-  min-height: 270px;
-  max-height: 271px;
-  align-items: center;
-}
+  .top-bar{
+    display: inline-block; 
+    border-radius: 50px;
+    border: .5px solid  rgba(64,9,121,1);
+    font-family: Bradley Hand;
+    font-weight: 800;
+  }
 
-.img {
-  align-items: center;
-}
+  .grid-x{
+    display: inline-block;
+    
+  }
 
-.imgClass {
-  width: 100%;
-}
+  .grid-y{
+    display: inline-block;
+  }
 
-.cInfo {
-}
+  .card-divider{
+      display: inline-block;
+      
+  }
