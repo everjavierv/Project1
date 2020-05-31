@@ -55,6 +55,8 @@ body {
   .card{
     display: inline-block; 
     float: left;
+    border-radius: 50px;
+    border: 1px solid  rgba(64,9,121,1);
   }
 
   .button {
@@ -68,12 +70,17 @@ body {
 
   .top-bar{
     display: inline-block; 
+    border-radius: 50px;
+    border: .5px solid  rgba(64,9,121,1);
   }
 
   .grid-x{
     display: inline-block;
+    
   }
 
   .grid-y{
     display: inline-block;
   }
+
+  
