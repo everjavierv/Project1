@@ -31,23 +31,13 @@
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     />
-    <link rel="stylesheet" href="style2.css" />
-    <!-- Style to fix the issue of text extending past card length -->
-    <style>
-      .card-body a {
-        word-break: break-all;
-      }
-
-      .articleHeadline {
-        line-height: 1.5;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />    
   </head>
 
   <body>
     <!-- Main Bootstrap Search -->
     <div class="grid-container">
-      <!-- Jumbotron for Title -->
+      <!-- Top-bar for Title -->
       <div class="top-bar" id="header" style="color: white; width: 900px;">
         <h1 class="text-center">
           <strong> <i class="fa fa-play-circle"></i> Last Call</strong>
@@ -71,25 +61,10 @@
                 <div class="form-group">
                   <label for="search">Zip code:</label>
                   <input type="text" class="form-control" id="search-term" />
-                </div>
-
-                <!-- Here we capture the number of concerts that the user wants to retrieve  -->
-                <!-- <div class="form-group">
-                  <label for="pwd">Number of concerts to Retrieve:</label>
-                  <select
-                    id="article-count"
-                    class="custom-select"
-                    aria-labelledby="dropdownMenuButton"
-                  >
-                    <option selected value="1">1</option> -->
-                <!-- Setting the option for 5 as default -->
-                <!-- <option value="5" selected>5</option>
-                    <option value="10">10</option>
-                  </select>
-                </div> -->
+                </div>                
 
                 <!-- Here we have our final submit button -->
-                <button type="submit" class=" clear button primary large" id="run-search">
+                <button type="submit" class="clear button primary large" id="run-search">
                   <i class="fa fa-search"></i> Search
                 </button>
               </form>
@@ -136,10 +111,7 @@
         </div>
       </div>
 
-      <!-- Footer Region -->
-      <div class="row">
-        <div class="col-sm-12"></div>
-      </div>
+    
     </div>
 
     <!-- jQuery JS -->

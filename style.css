@@ -1,63 +1,95 @@
 body {
-    background: linear-gradient(45deg, rgba(2,0,36,1) 25%, rgba(64,9,121,1) 63%, rgba(0,212,255,1) 93%);
-        
- }
- #header {
-    background: linear-gradient(45deg, rgba(2,0,36,1) 25%, rgba(121,9,38,0.21048062865497075) 63%, rgba(0,212,255,1) 93%);
- }
-
- .collapse navbar-collapse{
-     font: white;
- }
-
- .top-bar{
-
-    background: linear-gradient(45deg, rgba(2,0,36,1) 25%, rgba(64,9,121,1) 63%, rgba(0,212,255,1) 93%);
-    font-weight: 300;
-    display: inline-block;
- }
-
- .callout-container{
-    text-align: center;
- }
-
- .callout-large{
-    background: linear-gradient(45deg, rgba(2,0,36,1) 25%, rgba(64,9,121,1) 63%, rgba(0,212,255,1) 93%);
-    font-weight: 300;
-    font-color: rgb(126, 23, 23);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;  
-    border-radius: 10px;
-    position: center;
-    display: inline-block;   
+    font-family: Arial, Helvetica, sans-serif
+    font-weight: 500;
+    background: linear-gradient(
+      45deg,
+      rgba(2, 0, 36, 1) 25%,
+      rgba(64, 9, 121, 1) 63%,
+      rgba(0, 212, 255, 1) 93%
+    );
+  }
+  #header {
+    background: linear-gradient(
+      45deg,
+      rgba(2, 0, 36, 1) 25%,
+      rgba(121, 9, 38, 0.21048062865497075) 63%,
+      rgba(0, 212, 255, 1) 93%
+    );
+  }
+  
+  .concert-c {
+    font-weight: bolder;
+  }
+  
+  .conImg {
+    margin-left: auto;
+    margin-right: auto;  
+    font-weight: 600;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1em;
+    color: #404040;
+  }
+  
+  .conInfo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .list-group-item {
+    min-height: 270px;
+    max-height: 271px;
     align-items: center;
-    card-shadow: white;    
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif    
-    background-attachment: fixed;
-    background: linear-gradient(45deg, rgba(2,0,36,1) 25%, rgba(121,9,38,0.21048062865497075) 63%, rgba(0,212,255,1) 93%);
-    font-family: 
+  }
+  
+  .img {
+    align-items: center;
+  }
+  
+  .imgClass {
+    width: 100%;
+  }
+  
+  .cInfo {
+  }
+
+  .card{
+    display: inline-block; 
+    float: left;
+    border-radius: 50px;
     
- }
- 
- .card{
+  }
 
-    display: inline-block;
- }
- 
- 
+  .button {
+    border-radius: 0 5000px 5000px 0;
+    font-size: 0.8rem;
+  }
 
- .container{
+  .grid-container{
     text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(64,9,121,1)
-    border-radius: 20px;    
-    background: linear-gradient(45deg, rgba(2,0,36,1) 25%, rgba(64,9,121,1) 63%, rgba(0,212,255,1) 93%);
-    font-weight: 300;
-    
- }
+  }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-}
+  .top-bar{
+    display: inline-block; 
+    border-radius: 50px;
+    border: .5px solid  rgba(64,9,121,1);
+    font-family: Bradley Hand;
+    font-weight: 800;
+  }
+
+  .grid-x{
+    display: inline-block;
+    
+  }
+
+  .grid-y{
+    display: inline-block;
+  }
+
+  .card-divider{
+      display: inline-block;
+      
+  }
+
   
