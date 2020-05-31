@@ -70,7 +70,7 @@ function addConcertInfo() {
         $concertImgItem.append(
           "<img class='imgClass' src='" + cPic + "'>" + "</img></br>"
         );
-        $concertImgItem.append(
+        $concertListItem.append(
           "<h5 class ='cInfo' ><i class='fa fa-music'></i> Artist: " +
             cName +
             "</h5>"
